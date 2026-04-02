@@ -62,12 +62,12 @@ albedo_color = Color(0, 0, 0, 1)
 [node name="Level layout" type="Node" parent="." unique_id=1080186151]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Level layout" unique_id=1573165493]
-transform = Transform3D(0.85652316, 0, 0, 0, 0.8637091, 0, 0, 0, 0.8637091, -0.09291983, -2.757052, 0)
+transform = Transform3D(0.85652316, 0, 0, 0, 0.8637091, 0, 0, 0, 0.8637091, -1.086174, -2.5590591, -0.14670181)
 use_collision = true
 size = Vector3(30, 20, 1)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Level layout/CSGBox3D" unique_id=1281823071]
-transform = Transform3D(1.1675107, 0, 0, 0, 0.04533379, -1.1569095, 0, 1.1569095, 0.04533379, 0.10277247, -1.3086102, 1.2877332)
+transform = Transform3D(1.1675107, 0, 0, 0, 0.045333795, -1.1569096, 0, 1.1569096, 0.045333795, 6.889701, -1.3086102, 1.2877332)
 operation = 2
 radius = 6.4101563
 height = 6.2487793
@@ -103,7 +103,7 @@ light_specular = 1.144
 omni_range = 8.0
 
 [node name="grass layer" type="CSGBox3D" parent="Level layout" unique_id=1929647216]
-transform = Transform3D(0.999991, 0.0033341995, 0.0026420027, -0.0033353404, 0.9999944, 0.00042860204, -0.0026405624, -0.0004373882, 0.9999964, 3.4469938, -5.015751, 6.873852)
+transform = Transform3D(0.999991, 0.0033341995, 0.0026420027, -0.0033353404, 0.9999944, 0.00042860204, -0.0026405624, -0.0004373882, 0.9999964, 3.4046545, -5.0157514, 6.8754406)
 use_collision = true
 size = Vector3(1000, 1, 1000)
 material = SubResource("StandardMaterial3D_4kj4c")

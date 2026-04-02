@@ -19,7 +19,7 @@ func _ready () ->void:
 	elif health > 0:
 			print("you are injured")
 	else:
-		print("you are died")
+		print("you have pawed away")
 
 
 

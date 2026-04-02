@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dsb7w23p07ltu"]
+
+[ext_resource type="Script" uid="uid://clbh2lbpu0jru" path="res://health.gd" id="1_4flbx"]
+
+[node name="Node" type="Node" unique_id=528624472]
+
+[node name="Node2" type="Node" parent="." unique_id=2025817422]
+
+[node name="damage" type="Node" parent="." unique_id=926536648]
+
+[node name="health" type="Node" parent="." unique_id=1530734433]
+script = ExtResource("1_4flbx")
+health = null
+
+[connection signal="health_changed" from="health" to="health" method="_on_health_changed"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dsb7w23p07ltu"]
+
+[ext_resource type="Script" uid="uid://clbh2lbpu0jru" path="res://scripts/health.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ueptpu4xp6dn" path="res://scenes/TempStats.gd" id="2_g2els"]
+
+[node name="Node" type="Node" unique_id=528624472]
+
+[node name="Stats" type="Node" parent="." unique_id=2025817422]
+
+[node name="damage" type="Node" parent="." unique_id=926536648]
+
+[node name="health" type="Node" parent="." unique_id=1530734433]
+script = ExtResource("1_4flbx")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=920767019]
+script = ExtResource("2_g2els")
+
+[connection signal="health_changed" from="health" to="health" method="_on_health_changed"]

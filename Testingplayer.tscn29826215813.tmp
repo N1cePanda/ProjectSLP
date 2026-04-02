@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://btcxwflgijxcs"]
+
+[ext_resource type="PackedScene" uid="uid://cyunx67y1e65l" path="res://origin_player_character.tscn" id="1_i628j"]
+[ext_resource type="PackedScene" uid="uid://dlh3walusy2vg" path="res://button.tscn" id="4_hvipo"]
+[ext_resource type="Script" uid="uid://xwg32vawb5wj" path="res://damage.gd" id="6_34ya2"]
+
+[sub_resource type="Gradient" id="Gradient_i628j"]
+offsets = PackedFloat32Array(0, 0.7986348, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.37883958, 0.37883958, 0.37883958, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hvipo"]
+gradient = SubResource("Gradient_i628j")
+fill_from = Vector2(0, 0.94017094)
+fill_to = Vector2(0.8632479, 0)
+repeat = 2
+
+[sub_resource type="MeshTexture" id="MeshTexture_1xclp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34ya2"]
+shading_mode = 0
+albedo_color = Color(0.003921569, 0.003921569, 0, 0.9882353)
+heightmap_enabled = true
+detail_enabled = true
+detail_mask = SubResource("MeshTexture_1xclp")
+detail_blend_mode = 1
+detail_albedo = SubResource("GradientTexture2D_hvipo")
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_i628j"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 1.15
+
+[sub_resource type="Sky" id="Sky_hvipo"]
+sky_material = SubResource("ProceduralSkyMaterial_i628j")
+
+[sub_resource type="Environment" id="Environment_1xclp"]
+background_mode = 2
+sky = SubResource("Sky_hvipo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2q0k"]
+albedo_color = Color(0.8941324, 0, 0.012652611, 1)
+albedo_texture_msdf = true
+metallic = 0.08
+metallic_specular = 0.32
+roughness = 0.36
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px7dy"]
+albedo_color = Color(0.8941324, 0, 0.012652611, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vf6o2"]
+albedo_color = Color(0.8941324, 0, 0.012652611, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpa86"]
+albedo_color = Color(0.8941324, 0, 0.012652611, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xclp"]
+albedo_color = Color(1, 0.007843138, 0, 1)
+
+[node name="test main" type="CSGBox3D" unique_id=2134750631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.035702, 5.2222176, 10.614541)
+use_collision = true
+size = Vector3(25, 10, 1)
+material = SubResource("StandardMaterial3D_34ya2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=915003964]
+environment = SubResource("Environment_1xclp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1163482106]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 11, 32, -26)
+light_color = Color(1, 1, 0.9529412, 1)
+shadow_enabled = true
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="." unique_id=1281823071]
+transform = Transform3D(1, 0, 0, 0, 0.039155204, -0.9992331, 0, 0.9992331, 0.039155204, -0.004892826, -3.8873105, 1.1122267)
+operation = 2
+radius = 6.4101563
+height = 6.2487793
+sides = 32
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1929647216]
+transform = Transform3D(0.999991, 0.0033341995, 0.0026420027, -0.0033353404, 0.9999944, 0.00042860204, -0.0026405624, -0.0004373882, 0.9999964, 3.4469938, -5.015751, 6.873852)
+size = Vector3(100, 1, 100)
+
+[node name="PlayerCharacter" parent="." unique_id=2006443845 instance=ExtResource("1_i628j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28329659, -4.499999, -33.084724)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1909802514]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.368184, 0.31743097, 22.04549)
+size = Vector3(45, 9.695435, 1)
+material = SubResource("StandardMaterial3D_r2q0k")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2" unique_id=1309447311]
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -0.022314072, -0.953691, -24.95451)
+size = Vector3(45, 11.349609, 1)
+material = SubResource("StandardMaterial3D_px7dy")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2/CSGBox3D2" unique_id=128308751]
+transform = Transform3D(0.001709736, 0.00034009095, 0.99999845, 0.0065974705, 0.9999782, -0.00035137386, -0.99997675, 0.006598062, 0.0017074528, 22.866875, 0.19234705, -12.5418415)
+size = Vector3(25.869873, 11, 1)
+material = SubResource("StandardMaterial3D_vf6o2")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=319423759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09790969, 5.4033413, 22.40744)
+size = Vector3(25.651733, 0.78808594, 45.81488)
+material = SubResource("StandardMaterial3D_dpa86")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1086045099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8, 4.5, 9.800003)
+light_energy = 11.362
+light_indirect_energy = 4.494
+light_volumetric_fog_energy = 0.643
+light_negative = true
+light_specular = 1.144
+omni_range = 8.0
+
+[node name="level button" parent="." unique_id=837543958 instance=ExtResource("4_hvipo")]
+
+[node name="evil death wall" type="CSGBox3D" parent="." unique_id=632443640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.490803, -2.3066378, -28.51702)
+size = Vector3(1, 5.526245, 18.039063)
+material = SubResource("StandardMaterial3D_1xclp")
+
+[node name="Area3D" type="Area3D" parent="evil death wall" unique_id=1829158598]
+script = ExtResource("6_34ya2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="evil death wall/Area3D" unique_id=1055300745]
+
+[connection signal="area_entered" from="evil death wall/Area3D" to="evil death wall/Area3D" method="_on_area_entered"]
+
+[editable path="PlayerCharacter"]

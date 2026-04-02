@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://cyunx67y1e65l"]
+
+[ext_resource type="Script" uid="uid://b37qysaeuijcq" path="res://scripts/Player.gd" id="1_6mhvo"]
+[ext_resource type="Script" uid="uid://clbh2lbpu0jru" path="res://scripts/health.gd" id="2_lybi4"]
+[ext_resource type="PackedScene" uid="uid://blfj0xllxt8pl" path="res://for sorting/LowPolyLoveChanFINAL_.glb" id="4_f8i81"]
+[ext_resource type="Script" uid="uid://bkf5bgsf8074a" path="res://scripts/camera_rig.gd" id="4_putt1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v4gms"]
+radius = 0.4
+height = 1.8
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6mhvo"]
+
+[node name="PlayerCharacter" type="CharacterBody3D" unique_id=2006443845]
+script = ExtResource("1_6mhvo")
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=635016361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_v4gms")
+debug_color = Color(0.8156863, 0.30980393, 0.68235296, 1)
+script = ExtResource("2_lybi4")
+
+[node name="PolyChan" parent="." unique_id=1411170383 instance=ExtResource("4_f8i81")]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0, 0)
+
+[node name="CameraRig" type="SpringArm3D" parent="." unique_id=1357741460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("SphereShape3D_6mhvo")
+spring_length = 2.0
+script = ExtResource("4_putt1")
+turn_rate = 300
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1049492599]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)

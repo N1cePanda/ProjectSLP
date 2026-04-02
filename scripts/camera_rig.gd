@@ -3,6 +3,9 @@ extends SpringArm3D
 @onready var camera  : Camera3D = $Camera3D
 @export var turn_rate := 200 
 @export var mouse_sens := .10 
+@export var normal_fov := 75.0
+@export var sprint_fov := 90.0
+@export var fov_lerp_speed := 8.0
 @onready var player: CharacterBody3D = get_parent() #onready basically says for the script to start when seen, as _ready is the starter call for the tree to be read
 var camera_rig_height: float = position.y
 var mouse_input: Vector2 = Vector2() #stating that mouseinput, which is a vector, is a vector. Variables seems like they should be stated in start of script
@@ -19,6 +22,11 @@ func _process(delta: float) -> void:
 	rotation_degrees.y += look_input.x #end with output result 
 	rotation_degrees.x += look_input.y  
 	rotation_degrees.x = clampf(rotation_degrees.x, -45, 60)
+	var target_fov: = normal_fov
+	if Input.is_action_pressed("Sprint"):
+		target_fov = sprint_fov
+
+	camera.fov = lerp(camera.fov, target_fov, fov_lerp_speed * delta)
 
 
 

@@ -3,8 +3,8 @@ extends SpringArm3D
 @onready var camera  : Camera3D = $Camera3D
 @export var turn_rate := 200 
 @export var mouse_sens := .10 
-@export var normal_fov := 75.0
-@export var sprint_fov := 90.0
+@export var normal_fov := 80.0
+@export var sprint_fov := 100.0
 @export var fov_lerp_speed := 8.0
 @onready var player: CharacterBody3D = get_parent() #onready basically says for the script to start when seen, as _ready is the starter call for the tree to be read
 var camera_rig_height: float = position.y
@@ -19,8 +19,8 @@ func _process(delta: float) -> void:
 	look_input = turn_rate * look_input * delta #add in settings/ call support 
 	look_input += mouse_input #syncing up the var mouse_input to the game look_input 
 	mouse_input = Vector2()
-	rotation_degrees.y += look_input.x #end with output result 
-	rotation_degrees.x += look_input.y  
+	rotation_degrees.y -= look_input.x #end with output result 
+	rotation_degrees.x -= look_input.y  
 	rotation_degrees.x = clampf(rotation_degrees.x, -45, 60)
 	var target_fov: = normal_fov
 	if Input.is_action_pressed("Sprint"):

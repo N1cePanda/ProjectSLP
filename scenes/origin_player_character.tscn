@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b37qysaeuijcq" path="res://scripts/Player.gd" id="1_6mhvo"]
 [ext_resource type="Script" uid="uid://clbh2lbpu0jru" path="res://scripts/health.gd" id="2_lybi4"]
-[ext_resource type="PackedScene" uid="uid://blfj0xllxt8pl" path="res://for sorting/LowPolyLoveChanFINAL_.glb" id="4_f8i81"]
+[ext_resource type="PackedScene" uid="uid://blfj0xllxt8pl" path="res://Characters/LowPolyLoveChanFINAL_.glb" id="4_f8i81"]
 [ext_resource type="Script" uid="uid://bkf5bgsf8074a" path="res://scripts/camera_rig.gd" id="4_putt1"]
+[ext_resource type="Shader" uid="uid://c1xmgu077p8v1" path="res://Shaders/camera_overlay_pixelation.gdshader" id="5_1g448"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_v4gms"]
 radius = 0.4
@@ -11,16 +12,24 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6mhvo"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mv78h"]
+render_priority = 0
+shader = ExtResource("5_1g448")
+shader_parameter/pixel_size = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mv78h"]
+material = SubResource("ShaderMaterial_mv78h")
+
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=2006443845]
 script = ExtResource("1_6mhvo")
 
 [node name="Collider" type="CollisionShape3D" parent="." unique_id=635016361]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_v4gms")
 debug_color = Color(0.8156863, 0.30980393, 0.68235296, 1)
 script = ExtResource("2_lybi4")
 
-[node name="PolyChan" parent="." unique_id=1411170383 instance=ExtResource("4_f8i81")]
+[node name="PolyChan" parent="." unique_id=1304562761 instance=ExtResource("4_f8i81")]
 transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0, 0)
 
 [node name="CameraRig" type="SpringArm3D" parent="." unique_id=1357741460]
@@ -32,3 +41,7 @@ turn_rate = 300
 
 [node name="Camera3D" type="Camera3D" parent="CameraRig" unique_id=1049492599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRig/Camera3D" unique_id=221795534]
+transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, -0.10051632)
+mesh = SubResource("PlaneMesh_mv78h")

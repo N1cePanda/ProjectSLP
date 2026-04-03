@@ -9,10 +9,10 @@
 script = ExtResource("1_usvoc")
 
 [node name="blackrat" parent="." unique_id=1799390781 instance=ExtResource("1_bysqj")]
-transform = Transform3D(-0.41445497, 0, -0.9100697, 0, 1, 0, 0.9100697, 0, -0.41445497, 0.045260847, 0.17544281, -0.37123927)
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, -0.38402668, 0.17544281, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1714454233]
-transform = Transform3D(-0.49999315, 0.0026179869, -1.1443584e-10, 0, -2.1855694e-08, -0.5, -0.0026179869, -0.49999315, 2.1855394e-08, 0, 0.21344082, 0)
+transform = Transform3D(-2.1855694e-08, -0.5, 0, -2.1855694e-08, 9.553427e-16, -0.5, 0.5, -2.1855694e-08, -2.1855694e-08, 0, 0.21344082, 0)
 shape = SubResource("CapsuleShape3D_usvoc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1025397948]

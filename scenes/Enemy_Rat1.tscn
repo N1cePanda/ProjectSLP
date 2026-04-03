@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dxr55t50l08l5"]
+
+[ext_resource type="PackedScene" uid="uid://cci8q6ic0m58" path="res://Characters/blackrat.glb" id="1_bysqj"]
+[ext_resource type="Script" uid="uid://wyaybyg32gq8" path="res://scenes/enemy_rat_1.gd" id="1_usvoc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usvoc"]
+
+[node name="Enemy_Rat1" type="CharacterBody3D" unique_id=986618706]
+script = ExtResource("1_usvoc")
+
+[node name="blackrat" parent="." unique_id=1799390781 instance=ExtResource("1_bysqj")]
+transform = Transform3D(0.9396926, 0, -0.34202012, 0, 1, 0, 0.34202012, 0, 0.9396926, -0.38402668, 0.17544281, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1714454233]
+transform = Transform3D(-2.1855694e-08, -0.5, 0, -2.1855694e-08, 9.553427e-16, -0.5, 0.5, -2.1855694e-08, -2.1855694e-08, 0, 0.21344082, 0)
+shape = SubResource("CapsuleShape3D_usvoc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1025397948]
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1755930618]

@@ -59,4 +59,10 @@ navigation_mesh = SubResource("NavigationMesh_rwdyr")
 [node name="Chicken" parent="." unique_id=1805370948 instance=ExtResource("4_4kj4c")]
 transform = Transform3D(0.9211854, -0.38912395, 0, 0.38912395, 0.9211854, 0, 0, 0, 1, 158.53598, -56.964508, 3.0898666)
 
+[node name="Enemy_Rat2" parent="." unique_id=1481432868 groups=["enemies"] instance=ExtResource("6_rrs0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5329957, 2.5645256, -5.2110353)
+
+[node name="Enemy_Rat3" parent="." unique_id=1997817105 groups=["enemies"] instance=ExtResource("6_rrs0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6888247, 2.5645256, -5.2110353)
+
 [editable path="PlayerCharacter"]

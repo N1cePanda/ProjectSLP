@@ -1,5 +1,5 @@
 extends Panel
-class_name Example
+class_name Strength
 
 @export var tempStatManager : TempStatManager
 @export var strength : stat

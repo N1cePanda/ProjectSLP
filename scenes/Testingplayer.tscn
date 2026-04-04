@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://378en1inxps6" path="res://Characters/Chicken.glb" id="4_4kj4c"]
 [ext_resource type="PackedScene" uid="uid://l7j0ybt63pdm" path="res://scenes/magic_wand.tscn" id="4_rrs0a"]
 [ext_resource type="PackedScene" uid="uid://dxr55t50l08l5" path="res://scenes/Enemy_Rat1.tscn" id="6_rrs0a"]
+[ext_resource type="PackedScene" uid="uid://dc2fxcwh5hdub" path="res://scenes/StatButtons.tscn" id="8_hfd4t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_njwf3"]
 sky_top_color = Color(0.126802, 0.4773122, 0.6869086, 1)
@@ -68,5 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5329957, 2.5645256, -5.2110
 
 [node name="Enemy_Rat3" parent="." unique_id=1997817105 groups=["enemies"] instance=ExtResource("6_rrs0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6888247, 2.5645256, -5.2110353)
+
+[node name="GameUI" parent="." unique_id=855022376 instance=ExtResource("8_hfd4t")]
 
 [editable path="PlayerCharacter"]

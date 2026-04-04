@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Panel
 class_name Example
 
 @export var tempStatManager : TempStatManager

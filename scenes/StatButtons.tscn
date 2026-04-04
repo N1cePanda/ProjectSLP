@@ -1,0 +1,294 @@
+[gd_scene format=3 uid="uid://dc2fxcwh5hdub"]
+
+[ext_resource type="Script" uid="uid://ueptpu4xp6dn" path="res://scripts/TempStats.gd" id="1_0bm3o"]
+[ext_resource type="Script" uid="uid://bbe7vhs2d3ba" path="res://scripts/TempStatManager.gd" id="1_dk5dw"]
+[ext_resource type="Script" uid="uid://i4oii1r08lkq" path="res://scripts/stats.gd" id="2_x06fo"]
+[ext_resource type="Script" uid="uid://d18mdmsyrlyos" path="res://scripts/pause.gd" id="4_1iwf5"]
+[ext_resource type="Shader" uid="uid://brrgipt34yap8" path="res://scenes/pause_menu.gdshader" id="5_rqkfn"]
+[ext_resource type="Script" uid="uid://b18b0tbxj7lav" path="res://scripts/level.gd" id="6_ss6fk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss6fk"]
+shader = ExtResource("5_rqkfn")
+shader_parameter/lod = 0.0
+
+[sub_resource type="Resource" id="Resource_1iwf5"]
+script = ExtResource("2_x06fo")
+basevalue = 5.0
+metadata/_custom_type_script = "uid://i4oii1r08lkq"
+
+[sub_resource type="Animation" id="Animation_ss6fk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/PauseMenu/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_ewioo"]
+resource_name = "pause_menu"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/PauseMenu/ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.8, -0.050000004, -0.13333334, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:r")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:g")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:b")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(1, -0.15, 0, 0.15, 0, 1, -0.050000004, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CanvasLayer/PauseMenu/PanelContainer:modulate:a")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 1, -0.050000004, -0.16666667, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3ogh8"]
+_data = {
+&"RESET": SubResource("Animation_ss6fk"),
+&"pause_menu": SubResource("Animation_ewioo")
+}
+
+[node name="GameUI" type="Control" unique_id=855022376]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=323198855]
+
+[node name="PauseMenu" type="Control" parent="CanvasLayer" unique_id=1711167590]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_1iwf5")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PauseMenu" unique_id=483415706]
+material = SubResource("ShaderMaterial_ss6fk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PauseMenu" unique_id=181275152]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.375
+offset_top = -151.625
+offset_right = 221.375
+offset_bottom = 151.625
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/PanelContainer" unique_id=340746025]
+layout_mode = 2
+alignment = 1
+
+[node name="resume" type="Button" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer" unique_id=1783914596]
+layout_mode = 2
+text = "resume
+
+"
+
+[node name="restart" type="Button" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer" unique_id=1090828258]
+layout_mode = 2
+text = "restart
+"
+
+[node name="quit" type="Button" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer" unique_id=1841562739]
+layout_mode = 2
+text = "quit
+"
+
+[node name="levelupButton" type="Panel" parent="CanvasLayer/PauseMenu" unique_id=755930247]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.038000003
+anchor_top = 0.049000002
+anchor_right = 0.259
+anchor_bottom = 0.54
+offset_left = -44.776
+offset_top = -31.752
+offset_right = -299.368
+offset_bottom = -349.92
+script = ExtResource("6_ss6fk")
+
+[node name="Button" type="Button" parent="CanvasLayer/PauseMenu/levelupButton" unique_id=139963314]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 29.0
+offset_right = 302.0
+offset_bottom = 351.0
+text = "                 Level up button              "
+script = ExtResource("6_ss6fk")
+
+[node name="STR UI" type="Panel" parent="CanvasLayer/PauseMenu" unique_id=1962753368 node_paths=PackedStringArray("tempStatManager", "strengthLabel", "addStrengthButton", "removeStrengthButton", "addTempStrengthButton")]
+layout_mode = 0
+offset_top = 2.0
+offset_bottom = 2.0
+script = ExtResource("1_0bm3o")
+tempStatManager = NodePath("TempStatManager")
+strength = SubResource("Resource_1iwf5")
+strengthLabel = NodePath("str readout")
+addStrengthButton = NodePath("addstr")
+removeStrengthButton = NodePath("removestr")
+addTempStrengthButton = NodePath("addtempstr")
+
+[node name="strengthbutton" type="Panel" parent="CanvasLayer/PauseMenu/STR UI" unique_id=1130977737]
+layout_mode = 0
+offset_left = 931.0
+offset_top = 22.0
+offset_right = 1107.0
+offset_bottom = 248.0
+
+[node name="str readout" type="Label" parent="CanvasLayer/PauseMenu/STR UI" unique_id=1048101491]
+layout_mode = 0
+offset_left = 943.0
+offset_top = 31.0
+offset_right = 1019.0
+offset_bottom = 54.0
+text = "Strength: "
+
+[node name="TempStatManager" type="Node" parent="CanvasLayer/PauseMenu/STR UI" unique_id=1372578309]
+script = ExtResource("1_dk5dw")
+metadata/_custom_type_script = "uid://bbe7vhs2d3ba"
+
+[node name="addstr" type="Button" parent="CanvasLayer/PauseMenu/STR UI" unique_id=1895314084]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 72.0
+offset_right = 1085.0
+offset_bottom = 103.0
+text = "add str"
+
+[node name="removestr" type="Button" parent="CanvasLayer/PauseMenu/STR UI" unique_id=898159013]
+layout_mode = 0
+offset_left = 994.0
+offset_top = 119.0
+offset_right = 1087.0
+offset_bottom = 150.0
+text = "remove str
+"
+
+[node name="addtempstr" type="Button" parent="CanvasLayer/PauseMenu/STR UI" unique_id=1192769905]
+layout_mode = 0
+offset_left = 980.0
+offset_top = 169.0
+offset_right = 1088.0
+offset_bottom = 200.0
+text = "add temp str
+"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1967773205]
+libraries/ = SubResource("AnimationLibrary_3ogh8")
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/resume" to="CanvasLayer/PauseMenu" method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/restart" to="CanvasLayer/PauseMenu" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/quit" to="CanvasLayer/PauseMenu" method="_on_quit_pressed"]
+[connection signal="leveled_up" from="CanvasLayer/PauseMenu/levelupButton" to="CanvasLayer/PauseMenu/levelupButton" method="_on_leveled_up"]
+[connection signal="leveled_up" from="CanvasLayer/PauseMenu/levelupButton/Button" to="CanvasLayer/PauseMenu/levelupButton/Button" method="_on_leveled_up"]
+[connection signal="pressed" from="CanvasLayer/PauseMenu/levelupButton/Button" to="CanvasLayer/PauseMenu/levelupButton/Button" method="_on_pressed"]

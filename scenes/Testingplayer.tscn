@@ -48,9 +48,6 @@ top_level = true
 [node name="Camera3D" parent="PlayerCharacter/CameraRig" index="0" unique_id=1049492599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13824344, 0.44880438, 2.2566066)
 
-[node name="Enemy_Rat1" parent="." unique_id=986618706 groups=["enemies"] instance=ExtResource("6_rrs0a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5645256, -5.2110353)
-
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=387210866]
 navigation_mesh = SubResource("NavigationMesh_rwdyr")
 
@@ -58,6 +55,9 @@ navigation_mesh = SubResource("NavigationMesh_rwdyr")
 
 [node name="Chicken" parent="." unique_id=1805370948 instance=ExtResource("4_4kj4c")]
 transform = Transform3D(0.9211854, -0.38912395, 0, 0.38912395, 0.9211854, 0, 0, 0, 1, 158.53598, -56.964508, 3.0898666)
+
+[node name="Enemy_Rat1" parent="." unique_id=986618706 groups=["enemies"] instance=ExtResource("6_rrs0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5645256, -5.2110353)
 
 [node name="Enemy_Rat2" parent="." unique_id=1481432868 groups=["enemies"] instance=ExtResource("6_rrs0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5329957, 2.5645256, -5.2110353)

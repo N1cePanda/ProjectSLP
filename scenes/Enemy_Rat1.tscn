@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dxr55t50l08l5"]
 
 [ext_resource type="PackedScene" uid="uid://cci8q6ic0m58" path="res://Characters/blackrat.glb" id="1_bysqj"]
-[ext_resource type="Script" uid="uid://wyaybyg32gq8" path="res://scenes/enemy_rat_1.gd" id="1_usvoc"]
+[ext_resource type="Script" uid="uid://wyaybyg32gq8" path="res://scripts/enemy_rat_1.gd" id="1_usvoc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usvoc"]
 

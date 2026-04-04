@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btcxwflgijxcs"]
 
 [ext_resource type="PackedScene" uid="uid://cyunx67y1e65l" path="res://scenes/origin_player_character.tscn" id="1_i628j"]
-[ext_resource type="Script" uid="uid://cobegoa7n06em" path="res://scenes/MainSceneScript.gd" id="1_rwdyr"]
+[ext_resource type="Script" uid="uid://cobegoa7n06em" path="res://scripts/MainSceneScript.gd" id="1_rwdyr"]
 [ext_resource type="PackedScene" uid="uid://bth7uf60kr0h6" path="res://assets/test_level.glb" id="2_njwf3"]
 [ext_resource type="PackedScene" uid="uid://busnggvtmchcu" path="res://Characters/rocky.glb" id="3_k8fkl"]
 [ext_resource type="PackedScene" uid="uid://378en1inxps6" path="res://Characters/Chicken.glb" id="4_4kj4c"]
@@ -32,7 +32,6 @@ script = ExtResource("1_rwdyr")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=378670467]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 15.058979, 0)
-light_color = Color(0.30797365, 0.44707942, 0.5774784, 1)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1243940311]

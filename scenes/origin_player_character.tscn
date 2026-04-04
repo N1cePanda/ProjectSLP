@@ -21,6 +21,12 @@ shader_parameter/pixel_size = 2
 lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("ShaderMaterial_mv78h")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1g448"]
+albedo_color = Color(1, 0.34117648, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n8fss"]
+emission_energy_multiplier = 1.1
+
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=2006443845]
 script = ExtResource("1_6mhvo")
 
@@ -29,9 +35,6 @@ transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_v4gms")
 debug_color = Color(0.8156863, 0.30980393, 0.68235296, 1)
 script = ExtResource("2_lybi4")
-
-[node name="PolyChan" parent="." unique_id=1304562761 instance=ExtResource("4_f8i81")]
-transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0, 0)
 
 [node name="CameraRig" type="SpringArm3D" parent="." unique_id=1357741460]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -46,3 +49,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CameraRig/Camera3D" unique_id=221795534]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0, -0.10051632)
 mesh = SubResource("PlaneMesh_mv78h")
+
+[node name="PolyChan" parent="." unique_id=1304562761 instance=ExtResource("4_f8i81")]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0, 0, 0)
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="PolyChan" unique_id=688353764]
+transform = Transform3D(0.99999994, 0, 0, 0, 1.3113416e-07, -1, 0, 0.99999994, 1.3113416e-07, -2.2607693e-09, 1.5825441, 0.1887817)
+radius = 0.015
+height = 0.042526245
+material = SubResource("StandardMaterial3D_1g448")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="PolyChan/CSGCylinder3D2" unique_id=1136672519]
+transform = Transform3D(0.99999994, 0, 0, 0, -0.99999994, 8.742277e-08, 8.4703295e-22, -8.742276e-08, -1, -6.807879e-08, 0.08048156, 0.0002721548)
+radius = 0.014160156
+height = 0.15560913
+material = SubResource("StandardMaterial3D_n8fss")

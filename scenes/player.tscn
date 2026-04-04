@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsb7w23p07ltu"]
 
 [ext_resource type="Script" uid="uid://clbh2lbpu0jru" path="res://scripts/health.gd" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://ueptpu4xp6dn" path="res://scenes/TempStats.gd" id="2_g2els"]
+[ext_resource type="Script" uid="uid://ueptpu4xp6dn" path="res://scripts/TempStats.gd" id="2_g2els"]
 
 [node name="Node" type="Node" unique_id=528624472]
 

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://l7j0ybt63pdm"]
+
+[ext_resource type="PackedScene" uid="uid://cg4irvt55rnp5" path="res://assets/awp.glb" id="1_20e07"]
+
+[node name="Magic Wand" type="Node3D" unique_id=123253660]
+
+[node name="awp2" parent="." unique_id=1319527417 instance=ExtResource("1_20e07")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=893549503]
+target_position = Vector3(0, 0, -1)

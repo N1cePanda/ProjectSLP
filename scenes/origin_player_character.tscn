@@ -18,6 +18,7 @@ shader = ExtResource("5_1g448")
 shader_parameter/pixel_size = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_mv78h"]
+lightmap_size_hint = Vector2i(12, 12)
 material = SubResource("ShaderMaterial_mv78h")
 
 [node name="PlayerCharacter" type="CharacterBody3D" unique_id=2006443845]

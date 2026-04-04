@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bth7uf60kr0h6" path="res://assets/test_level.glb" id="2_njwf3"]
 [ext_resource type="PackedScene" uid="uid://busnggvtmchcu" path="res://Characters/rocky.glb" id="3_k8fkl"]
 [ext_resource type="PackedScene" uid="uid://378en1inxps6" path="res://Characters/Chicken.glb" id="4_4kj4c"]
+[ext_resource type="PackedScene" uid="uid://l7j0ybt63pdm" path="res://scenes/magic_wand.tscn" id="4_rrs0a"]
 [ext_resource type="PackedScene" uid="uid://dxr55t50l08l5" path="res://scenes/Enemy_Rat1.tscn" id="6_rrs0a"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_njwf3"]
@@ -47,6 +48,9 @@ top_level = true
 
 [node name="Camera3D" parent="PlayerCharacter/CameraRig" index="0" unique_id=1049492599]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13824344, 0.44880438, 2.2566066)
+
+[node name="Magic Wand" parent="PlayerCharacter" unique_id=123253660 instance=ExtResource("4_rrs0a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57247, 0.9939852, -0.06497079)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=387210866]
 navigation_mesh = SubResource("NavigationMesh_rwdyr")

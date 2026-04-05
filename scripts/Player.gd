@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		can_dash = true
 		can_wall_run = true
 		wall_run_timer = 0.0
-		remaining_jumps = 2
+		remaining_jumps = 1
 		is_wall_running = false
 		last_wall_normal = Vector3.ZERO
 
@@ -141,7 +141,7 @@ func _physics_process(delta: float) -> void:
 		# pull into wall so we don't drift off
 		velocity -= wall_normal * wall_stick_force * delta
 
-		remaining_jumps = 2
+		remaining_jumps = 1
 		can_wall_run = false
 
 	move_and_slide()

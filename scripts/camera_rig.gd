@@ -44,4 +44,5 @@ func _input(event: InputEvent) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta: float) -> void:
-	position = player.position + Vector3(0, camera_rig_height, 0)
+	var target_pos := player.position + Vector3(0, camera_rig_height, 0)
+	position = position.lerp(target_pos, 10.0 * delta)

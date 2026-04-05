@@ -1,20 +1,23 @@
 [gd_scene format=3 uid="uid://dxr55t50l08l5"]
 
-[ext_resource type="PackedScene" uid="uid://cci8q6ic0m58" path="res://Characters/blackrat.glb" id="1_bysqj"]
-[ext_resource type="Script" uid="uid://wyaybyg32gq8" path="res://scenes/enemy_rat_1.gd" id="1_usvoc"]
+[ext_resource type="Script" uid="uid://wyaybyg32gq8" path="res://scripts/enemy_rat_1.gd" id="1_usvoc"]
+[ext_resource type="PackedScene" uid="uid://bj7sqvqw6rb10" path="res://assets/TED.glb" id="2_vxxw2"]
+[ext_resource type="PackedScene" uid="uid://cg4irvt55rnp5" path="res://assets/awp.glb" id="3_sm1f3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_usvoc"]
 
-[node name="Enemy_Rat1" type="CharacterBody3D" unique_id=986618706]
+[node name="Enemy_Ted" type="CharacterBody3D" unique_id=986618706]
 script = ExtResource("1_usvoc")
 
-[node name="blackrat" parent="." unique_id=1799390781 instance=ExtResource("1_bysqj")]
-transform = Transform3D(-0.40673667, 0, -0.91354537, 0, 1, 0, 0.91354537, 0, -0.40673667, 0.045, 0.175, -0.37)
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1714454233]
-transform = Transform3D(-0.49992386, 0.008726229, -3.8143558e-10, 0, -2.1855694e-08, -0.5, -0.008726229, -0.49992386, 2.1852365e-08, 0, 0.21344082, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.47108132, 0)
 shape = SubResource("CapsuleShape3D_usvoc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1025397948]
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=1755930618]
+
+[node name="TED" parent="." unique_id=1500658456 instance=ExtResource("2_vxxw2")]
+
+[node name="awp2" parent="TED" unique_id=1319527417 instance=ExtResource("3_sm1f3")]
+transform = Transform3D(0.016283225, 0, -0.99986744, 0, 1, 0, 0.99986744, 0, 0.016283225, 0.2689593, 0.33641082, 0.25030318)
